@@ -1,0 +1,29 @@
+#define N 30
+int main()
+{
+	char a[N];
+	void insertsort(char a[]);
+	printf ("\n请输入一串符：");
+	gets(a);
+	insertsort(a);
+	printf("\n从小到大排序后的字符串是：");
+	puts(a);
+    return 0;
+}
+void insertsort(char b[])
+{
+    int i,j,n;
+	char t;
+	n = strlen(b);
+	for(i=1;i<n;i++)
+	{
+	  t = b[i];
+	 for(j=i-1;j>=0;j--)
+		{ if(t<b[j])
+			 b[j+1] = b[j];
+		 else 
+			 break;
+	    }
+	 b[j+1] = t;
+	}
+}
